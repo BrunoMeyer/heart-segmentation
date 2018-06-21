@@ -1,0 +1,7 @@
+*.pgm
+output/*
+HeartDatabase
+HeartDatabase/
+*.tgz
+patients.txt
+experts.txt
