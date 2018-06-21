@@ -6,7 +6,7 @@
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at
- * https://github.com/BrunoMeyer/gene-selection-to-classification/blob/master/LICENSE
+ * https://github.com/BrunoMeyer/heart-segmentation/blob/master/LICENSE
 '''
 
 import sys
@@ -22,7 +22,6 @@ import os
 import imutils
 import math
 
-SLICE = 10
 
 THRESH_LOW_ENDO = 20
 THRESH_HIGH_ENDO = 29
@@ -32,8 +31,8 @@ THRESH_HIGH_EPI = 29
 RADIUS_THRESH = 24
 
 # Change between "expert1" and "expert2"
-
 expert_name = "expert1"
+
 def getEndocardio(pimg, id_patient):
 
     # Remove the low values
@@ -421,6 +420,11 @@ if(__name__ == "__main__"):
 
     # Show the fscore average
     print("f1score average: ", sum(avgs_fscore)/len(avgs_fscore))
-    print("precision average: ", sum(avgs_precision)/len(avgs_precision))
-    print("recall average: ", sum(avgs_recall)/len(avgs_recall))
+    print("f1score std: ", np.std(avgs_fscore))
 
+    print("precision average: ", sum(avgs_precision)/len(avgs_precision))
+    print("precision std: ", np.std(avgs_precision))
+
+    print("recall average: ", sum(avgs_recall)/len(avgs_recall))
+    print("recall std: ", np.std(avgs_recall))
+    
